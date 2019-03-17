@@ -26,7 +26,7 @@ function httpGetAsync(url, callback) {
 }
 
 function processBuildingData(data) {
-  window.buildings = data.buildings;
+  window.buildings = JSON.parse(data).buildings;
 }
 
 httpGetAsync('./data/buildings.json', processBuildingData);
