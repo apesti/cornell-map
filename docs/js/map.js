@@ -30,6 +30,23 @@ function processBuildingData(data) {
 
   updateBuildings();
 
+  $( function() {
+    $( "#slider" ).slider({
+      min: currentDate.getTime(),
+      max: Math.ceil(new Date().getTime()/86400000)*86400000,
+      step: 86400000,
+      value: currentDate.getTime(),
+      slide: function( event, ui ) {
+        var date = new Date(ui.value);
+        $( "#datepicker" ).datepicker(
+          "setDate" , date.toLocaleDateString()
+        );
+        currentDate = date;
+        updateBuildings();
+      }
+    });
+  } );
+
   $( "#datepicker" ).datepicker({
     defaultDate: currentDate.toLocaleDateString(),
     onClose: function(date, datepicker) {
@@ -118,7 +135,7 @@ buildingLayer.options.onEachFeature = processBuilding;
 
 L.Control.DatePicker = L.Control.extend({
     onAdd: function(map) {
-        var datepicker = L.DomUtil.get('datepickerp');
+        var datepicker = L.DomUtil.get('dateselector');
         L.DomEvent.disableClickPropagation(datepicker)
         return datepicker;
     },
