@@ -29,7 +29,7 @@ function processBuildingData(data) {
   window.buildings = data.buildings;
 }
 
-httpGetAsync('/data/buildings.json', processBuildingData);
+httpGetAsync('./data/buildings.json', processBuildingData);
 
 function addBuilding(building) {
   var builtDate = new Date(building.properties.builtDate.year,
