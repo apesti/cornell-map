@@ -27,6 +27,22 @@ function httpGetAsync(url, callback) {
 
 function processBuildingData(data) {
   window.buildings = JSON.parse(data).buildings;
+  
+  updateBuildings();
+
+  $( "#datepicker" ).datepicker({
+    defaultDate: currentDate.toLocaleDateString(),
+    onClose: function(date, datepicker) {
+      currentDate = new Date(datepicker.currentDay,
+        datepicker.currentMonth,
+        datepicker.currentYear);
+      updateBuildings();
+    }
+  });
+
+  $( "#datepicker" ).datepicker(
+    "setDate" , currentDate.toLocaleDateString()
+  );
 }
 
 httpGetAsync('./data/buildings.json', processBuildingData);
@@ -99,7 +115,6 @@ function updateBuildings() {
 
 var buildingLayer = L.geoJSON().addTo(map);
 buildingLayer.options.onEachFeature = processBuilding;
-updateBuildings();
 
 L.Control.DatePicker = L.Control.extend({
     onAdd: function(map) {
@@ -115,17 +130,3 @@ L.control.datepicker = function(opts) {
 };
 
 L.control.datepicker({ position: 'topright' }).addTo(map);
-
-$( "#datepicker" ).datepicker({
-  defaultDate: currentDate.toLocaleDateString(),
-  onClose: function(date, datepicker) {
-    currentDate = new Date(datepicker.currentDay,
-      datepicker.currentMonth,
-      datepicker.currentYear);
-    updateBuildings();
-  }
-});
-
-$( "#datepicker" ).datepicker(
-  "setDate" , currentDate.toLocaleDateString()
-);
