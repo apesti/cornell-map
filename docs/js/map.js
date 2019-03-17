@@ -27,15 +27,15 @@ function httpGetAsync(url, callback) {
 
 function processBuildingData(data) {
   window.buildings = JSON.parse(data).buildings;
-  
+
   updateBuildings();
 
   $( "#datepicker" ).datepicker({
     defaultDate: currentDate.toLocaleDateString(),
     onClose: function(date, datepicker) {
-      currentDate = new Date(datepicker.currentDay,
+      currentDate = new Date(datepicker.currentYear,
         datepicker.currentMonth,
-        datepicker.currentYear);
+        datepicker.currentDay);
       updateBuildings();
     }
   });
