@@ -65,11 +65,11 @@ function processBuildingData(data) {
 httpGetAsync('./data/buildings.json', processBuildingData);
 
 function addBuilding(building) {
-  var builtDate = new Date(building.properties.builtDate.year,
-    building.properties.builtDate.month-1,
-    building.properties.builtDate.day);
+  var openedDate = new Date(building.properties.openedDate.year,
+    building.properties.openedDate.month-1,
+    building.properties.openedDate.day);
 
-  if (builtDate > currentDate) {
+  if (openedDate > currentDate) {
     return;
   }
 
@@ -100,7 +100,7 @@ function addBuilding(building) {
     buildingFeature = building.features[i];
   }
 
-  buildingFeature.properties.builtDate = building.properties.builtDate;
+  buildingFeature.properties.openedDate = building.properties.openedDate;
   buildingFeature.properties.destroyedDate = building.properties.destroyedDate;
   buildingFeature.properties.name = name;
 
@@ -108,17 +108,17 @@ function addBuilding(building) {
 }
 
 function processBuilding(building, layer) {
-  var builtDate = new Date(building.properties.builtDate.year,
-    building.properties.builtDate.month-1,
-    building.properties.builtDate.day);
+  var openedDate = new Date(building.properties.openedDate.year,
+    building.properties.openedDate.month-1,
+    building.properties.openedDate.day);
   var tooltipString = `<b>Name</b>: ${building.properties.name}
-    <br><b>Date Built</b>: ${builtDate.toLocaleDateString()}`
+    <br><b>Opened</b>: ${openedDate.toLocaleDateString()}`
   if (typeof building.properties.destroyedDate !== 'undefined') {
     var destroyedDate = new Date(building.properties.destroyedDate.year,
       building.properties.destroyedDate.month-1,
       building.properties.destroyedDate.day);
     tooltipString +=
-      `<br><b>Date Destroyed</b>: ${destroyedDate.toLocaleDateString()}<br>`;
+      `<br><b>Destroyed</b>: ${destroyedDate.toLocaleDateString()}<br>`;
   }
   layer.bindPopup(tooltipString);
 }

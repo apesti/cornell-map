@@ -21,7 +21,7 @@
             }
           }
         ],
-        "builtDate" : {
+        "openedDate" : {
           "year": 1868,
           "month": 10,
           "day": 7
@@ -144,7 +144,7 @@
             }
           }
         ],
-        "builtDate" : {
+        "openedDate" : {
           "year": 1870,
           "month": 1,
           "day": 12
@@ -235,7 +235,7 @@
             }
           }
         ],
-        "builtDate" : {
+        "openedDate" : {
           "year": 1872,
           "month": 2,
           "day": 2
