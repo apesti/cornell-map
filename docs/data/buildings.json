@@ -318,11 +318,19 @@
       "properties": {
         "names": [
           {
-            "name" : "McGraw Hall",
+            "name" : "McGraw Building",
             "date" : {
               "year": 1872,
               "month": 2,
               "day": 2
+            }
+          },
+          {
+            "name" : "McGraw Hall",
+            "date" : {
+              "year": 1887,
+              "month": 6,
+              "day": 15
             }
           }
         ],
