@@ -5,6 +5,97 @@
       "properties": {
         "names": [
           {
+            "name" : "Cascadilla Place",
+            "date" : {
+              "year": 1868,
+              "month": 10,
+              "day": 7
+            }
+          },
+          {
+            "name" : "Cascadilla Hall",
+            "date" : {
+              "year": 1913,
+              "month": 9,
+              "day": 25
+            }
+          }
+        ],
+        "openedDate" : {
+          "year": 1868,
+          "month": 10,
+          "day": 7
+        }
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+              [
+                [
+                  [
+                    -76.4871446,
+                    42.4426069
+                  ],
+                  [
+                    -76.4871312,
+                    42.4423387
+                  ],
+                  [
+                    -76.486517,
+                    42.4423565
+                  ],
+                  [
+                    -76.4865304,
+                    42.4426247
+                  ],
+                  [
+                    -76.4871446,
+                    42.4426069
+                  ]
+                ],
+                [
+                  [
+                    -76.4869542,
+                    42.4425376
+                  ],
+                  [
+                    -76.4869502,
+                    42.4424535
+                  ],
+                  [
+                    -76.486812,
+                    42.4424565
+                  ],
+                  [
+                    -76.4868174,
+                    42.4425406
+                  ],
+                  [
+                    -76.4869542,
+                    42.4425376
+                  ]
+                ]
+              ]
+            ]
+          },
+          "properties": {
+            "date" : {
+              "year": 1868,
+              "month": 10,
+              "day": 7
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "names": [
+          {
             "name" : "South University Building",
             "date" : {
               "year": 1868,
